@@ -1,4 +1,4 @@
-package com.logging.LogginConsumer.controller;
+package com.logging.LoggingConsumer.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.logging.LogginConsumer.service.LogginConsumerService;
+import com.logging.LoggingConsumer.service.LoggingConsumerService;
 
 
 
 @RestController
-public class LogginConsumerController {
+public class LoggingConsumerController {
 	
-	LogginConsumerService consumerService;
+	LoggingConsumerService consumerService;
 	
-	public LogginConsumerController(LogginConsumerService consumerService) {
+	public LoggingConsumerController(LoggingConsumerService consumerService) {
 		this.consumerService = consumerService;
 	}
 

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.logging</groupId>
-	<artifactId>LogginProducer</artifactId>
+	<artifactId>LoggingProducer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LogginProducer</name>
+	<name>LoggingProducer</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -48,7 +48,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.logging</groupId>
-			<artifactId>LogginEntities</artifactId>
+			<artifactId>LoggingEntities</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>

@@ -1,4 +1,4 @@
-package com.logging.LogginConsumer.config;
+package com.logging.LoggingConsumer.config;
 
 import java.util.Properties;
 
@@ -6,11 +6,11 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
-import com.logging.LogginEntities.LogginRecord;
+import com.logging.LoggingEntities.LoggingRecord;
 
-public class LogginConsumer {
+public class LoggingConsumer {
 	
-	public KafkaConsumer<String, LogginRecord> createTempConsumer() {
+	public KafkaConsumer<String, LoggingRecord> createTempConsumer() {
         Properties props = new Properties();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "temp-group-" + System.currentTimeMillis());

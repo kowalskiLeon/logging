@@ -1,16 +1,16 @@
-package com.logging.LogginEntities;
+package com.logging.LoggingEntities;
 
-public class LogginMessage {
+public class LoggingMessage {
 	
 	private Long id;
 	private String message;
-	private LogginCodeEnum code;
+	private LoggingCodeEnum code;
 	private String timestamp;
 	private String description;
 	
 	
 	
-	public LogginMessage(Long id, String message, LogginCodeEnum code, String timestamp, String description) {
+	public LoggingMessage(Long id, String message, LoggingCodeEnum code, String timestamp, String description) {
 		super();
 		this.id = id;
 		this.message = message;
@@ -19,7 +19,7 @@ public class LogginMessage {
 		this.description = description;
 	}
 	
-	public LogginMessage() {
+	public LoggingMessage() {
 		super();
 	}
 	
@@ -35,10 +35,10 @@ public class LogginMessage {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public LogginCodeEnum getCode() {
+	public LoggingCodeEnum getCode() {
 		return code;
 	}
-	public void setCode(LogginCodeEnum code) {
+	public void setCode(LoggingCodeEnum code) {
 		this.code = code;
 	}
 	public String getTimestamp() {

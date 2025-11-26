@@ -1,23 +1,25 @@
-package com.logging.LogginProducer.service;
+package com.logging.LoggingProducer.service;
 
 import org.springframework.stereotype.Service;
-import com.logging.LogginEntities.LogginRecord;
+
+import com.logging.LoggingEntities.LoggingRecord;
+
 import java.util.Random;
 import org.springframework.kafka.core.KafkaTemplate;
 
 @Service
-public class LogginProducerService {
+public class LoggingProducerService {
 	
-	private final KafkaTemplate<String, LogginRecord> kafkaTemplateOrder;
+	private final KafkaTemplate<String, LoggingRecord> kafkaTemplateOrder;
 
     private final Random random = new Random();
 
-    public LogginProducerService(KafkaTemplate<String, LogginRecord> kafkaTemplateOrder) {
+    public LoggingProducerService(KafkaTemplate<String, LoggingRecord> kafkaTemplateOrder) {
         this.kafkaTemplateOrder = kafkaTemplateOrder;
     }
 
     @SuppressWarnings("null")
-    public void enviarMensagem(LogginRecord order) {
+    public void enviarMensagem(LoggingRecord order) {
         int partition = random.nextInt(2);
         System.out.println("Sent message to partition: " + partition);
         System.out.println("Sending Order: " + order.name());

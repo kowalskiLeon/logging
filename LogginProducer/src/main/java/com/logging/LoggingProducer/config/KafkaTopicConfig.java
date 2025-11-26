@@ -1,4 +1,4 @@
-package com.logging.LogginProducer.config;
+package com.logging.LoggingProducer.config;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.logging.LogginConsumer.service;
+package com.logging.LoggingConsumer.service;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -12,34 +12,34 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.TopicPartition;
 import org.springframework.stereotype.Service;
 
-import com.logging.LogginConsumer.config.LogginConsumer;
-import com.logging.LogginEntities.LogginRecord;
+import com.logging.LoggingConsumer.config.LoggingConsumer;
+import com.logging.LoggingEntities.LoggingRecord;
 
 @Service
-public class LogginConsumerService {
+public class LoggingConsumerService {
 
-	LogginConsumer logginConsumer;
+	LoggingConsumer logginConsumer;
 	
-	 public LogginConsumerService() {
-		this.logginConsumer = new LogginConsumer();
+	 public LoggingConsumerService() {
+		this.logginConsumer = new LoggingConsumer();
 	}
 
 	@KafkaListener(topicPartitions = @TopicPartition(topic = "napoleao-order-processed", partitions = { "1" }), containerFactory = "orderKafkaListenerContainerFactory")
-    public void orderListener(LogginRecord order) {
+    public void orderListener(LoggingRecord order) {
         System.out.println("Received Message Consumer 01: " + order.name());
     }
 	 
 	 public List<String> getAllMessagesFromTopic(String topicName) {
 	        List<String> messages = new ArrayList<>();
 	        
-	        KafkaConsumer<String, LogginRecord> consumer = logginConsumer.createTempConsumer();
+	        KafkaConsumer<String, LoggingRecord> consumer = logginConsumer.createTempConsumer();
 	        
 	        try {
 	            consumer.subscribe(Collections.singletonList(topicName));
 	            consumer.poll(Duration.ofMillis(100));
 	            consumer.seekToBeginning(consumer.assignment());
-	            ConsumerRecords<String, LogginRecord> records = consumer.poll(Duration.ofSeconds(5));
-	            for (ConsumerRecord<String, LogginRecord> record : records) {
+	            ConsumerRecords<String, LoggingRecord> records = consumer.poll(Duration.ofSeconds(5));
+	            for (ConsumerRecord<String, LoggingRecord> record : records) {
 	                messages.add(record.value().toString());
 	            }
 	            

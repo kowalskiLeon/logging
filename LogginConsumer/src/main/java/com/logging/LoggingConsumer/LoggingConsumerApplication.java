@@ -1,13 +1,13 @@
-package com.logging.LogginConsumer;
+package com.logging.LoggingConsumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LogginConsumerApplication {
+public class LoggingConsumerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LogginConsumerApplication.class, args);
+		SpringApplication.run(LoggingConsumerApplication.class, args);
 	}
 
 }

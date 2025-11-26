@@ -1,24 +1,25 @@
-package com.logging.LogginProducer.controller;
+package com.logging.LoggingProducer.controller;
 
-import java.security.Provider.Service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.logging.LogginEntities.LogginRecord;
-import com.logging.LogginProducer.service.LogginProducerService;
+import com.logging.LoggingEntities.LoggingRecord;
+import com.logging.LoggingProducer.service.LoggingProducerService;
+
+
+
 
 @RestController
-public class LoginProducerController {
+public class LoggingProducerController {
 	
 
-	LogginProducerService producerService;
+	LoggingProducerService producerService;
 	
-	public LoginProducerController(LogginProducerService producerService) {
+	public LoggingProducerController(LoggingProducerService producerService) {
 		this.producerService = producerService;
 	}
 
@@ -28,8 +29,8 @@ public class LoginProducerController {
 	}
 	
 	@PostMapping("/enviar")
-	public String enviarMensagem(@RequestBody LogginRecord order) {
-		ResponseEntity<LogginRecord> responseEntity;
+	public String enviarMensagem(@RequestBody LoggingRecord order) {
+		ResponseEntity<LoggingRecord> responseEntity;
 		try {
 			producerService.enviarMensagem(order);
 		}

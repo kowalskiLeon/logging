@@ -1,4 +1,4 @@
-package com.logging.LogginConsumer.config;
+package com.logging.LoggingConsumer.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,17 +14,17 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.support.serializer.ErrorHandlingDeserializer;
 import org.springframework.kafka.support.serializer.JsonDeserializer;
 
-import com.logging.LogginEntities.LogginRecord;
+import com.logging.LoggingEntities.LoggingRecord;
 
 @EnableKafka
 @Configuration
-public class LogginConsumerConfig {
+public class LoggingConsumerConfig {
 
         @Value(value = "${spring.kafka.bootstrap-servers}")
         private String bootstrapAddress;
 
         @Bean
-        public ConsumerFactory<String, LogginRecord> orderConsumerFactory() {
+        public ConsumerFactory<String, LoggingRecord> orderConsumerFactory() {
                 Map<String, Object> props = new HashMap<>();
                 props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
                 props.put(ConsumerConfig.GROUP_ID_CONFIG,"napoleao-order-processed");
@@ -38,8 +38,8 @@ public class LogginConsumerConfig {
         }
 
         @Bean
-        public ConcurrentKafkaListenerContainerFactory<String, LogginRecord> orderKafkaListenerContainerFactory() {
-                ConcurrentKafkaListenerContainerFactory<String, LogginRecord> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        public ConcurrentKafkaListenerContainerFactory<String, LoggingRecord> orderKafkaListenerContainerFactory() {
+                ConcurrentKafkaListenerContainerFactory<String, LoggingRecord> factory = new ConcurrentKafkaListenerContainerFactory<>();
                 factory.setConsumerFactory(orderConsumerFactory());
                 return factory;
         }
